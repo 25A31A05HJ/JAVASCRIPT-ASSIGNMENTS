@@ -1,0 +1,25 @@
+// for loop: multiplication table
+console.log("-- Multiplication Table of 5 --");
+for (let i = 1; i <= 5; i++) {
+  console.log(`5 x ${i} = ${5 * i}`);
+}
+
+// while + break: first number > 10 divisible by 6
+console.log("\n-- First number > 10 divisible by 6 --");
+let n = 11;
+while (true) {
+  if (n % 6 === 0) {
+    console.log(`Found: ${n}`);
+    break;
+  }
+  n++;
+}
+
+// do...while + continue: skip even numbers
+console.log("\n-- Odd numbers 1-5 (do...while with continue) --");
+let k = 0;
+do {
+  k++;
+  if (k % 2 === 0) continue;   // jumps to the while condition
+  console.log(k);
+} while (k < 5);
