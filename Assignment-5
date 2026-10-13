@@ -1,0 +1,30 @@
+// Standard function with default parameters
+function rectangleArea(length = 5, width = 4) {
+  return length * width;
+}
+
+// Arrow function with default parameters
+const rectangleAreaArrow = (length = 5, width = 4) => length * width;
+
+console.log(`Standard Function Area (Default 5x4): ${rectangleArea()}`);
+console.log(`Arrow Function Area (Custom 10x3): ${rectangleAreaArrow(10, 3)}`);
+
+// Block scope: let/const stay inside the block
+try {
+  if (true) {
+    let blockVar = "I only exist inside this block";
+  }
+  console.log(blockVar); // throws ReferenceError
+} catch (err) {
+  console.log(`Scope Test Error: ${err.name}: ${err.message} (when accessed outside block)`);
+}
+
+// Function scope: even var cannot escape a function
+function demo() {
+  var functionVar = "inside function";
+}
+try {
+  console.log(functionVar);
+} catch (err) {
+  console.log(`Function Scope Error: ${err.name}: ${err.message}`);
+}
